@@ -1,0 +1,283 @@
+/* src/styles/HomePage.css */
+.home-page {
+  position: relative;
+  height: 100vh; /* Весь экран */
+  display: flex;
+  flex-direction: column;
+  background-color: #2e3b4e; /* Тёмный фон */
+  color: white;
+  align-items: center;
+  justify-content: flex-start; /* Верхнее выравнивание */
+}
+
+.centered-text {
+  position: absolute;
+  top: 20px; /* Сдвиг от верхней части экрана */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  text-align: center;
+  white-space: nowrap; /* Запрещает перенос на несколько строк */
+}
+
+.note-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 150px; /* Отступ снизу */
+  width: 80%; /* Гибкая ширина */
+  max-width: 500px; /* Ограничиваем максимальную ширину */
+  padding: 10px;
+  background-color: #2e3b4e; /* Фон формы */
+  border-bottom: 3px solid #fff;
+  z-index: 2; /* Обеспечивает, что форма будет поверх других элементов */
+}
+
+.note-input {
+  margin: 5px;
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.note-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.notes-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 100px; /* Отступ сверху от формы для заметок */
+  justify-content: center;
+  position: relative;
+}
+
+.note {
+  background-color: white;
+  color: black;
+  margin: 10px;
+  padding: 15px;
+  width: 250px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* По центру выравниваем элементы по вертикали */
+}
+
+.note-header span {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note-header .topic, .note-header .tag {
+  width: 180px; /* Примерное ограничение для 30 символов */
+}
+
+.note-date {
+  font-size: 0.8em;
+  color: #666;
+  margin-top: 10px;
+}
+
+.delete-note {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.view-note {
+  margin-top: 10px;
+  padding: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #2e3b4e; /* Темный фон */
+  color: white; /* Белый цвет текста */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  text-align: left; /* Выравнивание по левому краю */
+  white-space: pre-wrap; /* Для переноса длинных строк */
+}
+
+.popup-content h2 {
+  margin-bottom: 10px;
+}
+
+.popup-content div {
+  margin-bottom: 10px;
+}
+
+.popup-content p {
+  word-wrap: break-word; /* Перенос длинных слов */
+  white-space: pre-wrap; /* Перенос текста */
+  line-height: 1.5;
+  font-size: 16px;
+  max-width: 100%; /* Ограничиваем максимальную ширину */
+}
+
+.popup-close {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.calendar-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  max-width: 300px; /* Ограничиваем максимальную ширину */
+  width: 50%; /* Календарь растягивается по ширине */
+}
+
+.reset-date-filter {
+  margin-bottom: 10px; /* Отступ от кнопки к календарю */
+  text-align: center;
+}
+
+.reset-button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.reset-button:hover {
+  background-color: #0056b3;
+}
+
+.profile-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.username {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.logout-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  background-color: #f44336; /* Красный цвет */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.logout-button:hover {
+  background-color: #d32f2f; /* Более темный красный при наведении */
+}
+
+.trash-button {
+  position: absolute;
+  top: 20px;
+  right: 120px;
+  padding: 10px 20px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.trash-button:hover {
+  background-color: #e68900;
+}
+
+/* Медиазапросы для адаптивности */
+@media (max-width: 768px) {
+  .note-form {
+    bottom: 120px; /* Поднимаем форму, чтобы она не перекрывала календарь */
+    width: 90%; /* Увеличиваем ширину на мобильных */
+  }
+
+  .calendar-container {
+    max-width: 250px; /* Уменьшаем календарь на мобильных */
+    left: 10px; /* Сдвигаем календарь ближе к левому краю */
+  }
+
+  .note-input {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .note-form {
+    bottom: 100px; /* Еще выше на очень маленьких экранах */
+    width: 95%;
+  }
+
+  .calendar-container {
+    max-width: 200px; /* Еще меньше календарь */
+    left: 10px; /* Сдвигаем ближе к краю */
+  }
+
+  .note-input {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .note-header span {
+    max-width: 80%; /* Увеличиваем ширину на мобильных устройствах */
+  }
+}
